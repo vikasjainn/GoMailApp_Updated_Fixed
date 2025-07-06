@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package email;
+
+option go_package = "GoMailApp_Updated_Fixed/Proto;Proto";
+
+service EmailService {
+  rpc SendEmail (UserInput) returns (EmailResponse);
+}
+
+message UserInput {
+  string Name = 1;
+  string Email = 2;
+}
+
+message EmailResponse {
+  bool Success = 1;
+  string Message = 2;
+}
